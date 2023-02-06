@@ -1,0 +1,38 @@
+-- Create a grill store database
+
+CREATE TABLE my_store 
+(id INTEGER PRIMARY KEY, name TEXT, fuel TEXT, price INTEGER, sales INTEGER);
+
+INSERT INTO my_store VALUES
+(1, 'Smokin Bros Premeire Plus 24', 'pellets', 1399, 3),
+(2, 'Smokin Bros Premeire Plus 30', 'pellets', 1649, 8),
+(3, 'Smokin Bros Premeire Plus 36', 'pellets', 1999, 3),
+(4, 'LG Founders Premeire 1200', 'pellets', 2199, 4),
+(5, 'LG Founders Premeire 800', 'pellets', 1899, 3),
+(6, 'LG Founders Legacy 1200', 'pellets', 1399, 3),
+(7, 'LG Founders Legacy 800', 'pellets', 999, 5),
+(8, 'Primo XL', 'charcoal', 1499, 9),
+(9, 'Primo L', 'charcoal', 1299, 6),
+(10, 'Primo JR', 'charcoal', 1049, 3),
+(11, 'Primo Kamado', 'charcoal', 949, 12),
+(12, 'Big Green Egg XL', 'charcoal', 1599, 7),
+(13, 'Big Green Egg L', 'charcoal', 1299, 10),
+(14, 'Big Green Egg M', 'charcoal', 999, 1),
+(15, 'Big Green Egg S', 'charcoal', 899, 3),
+(16, 'Big Green Egg MiniMax', 'charcoal', 699, 8);
+
+--display database by price
+SELECT * FROM my_store
+ORDER BY price desc;
+
+--display grills with sales greater than five units
+SELECT * FROM my_store
+WHERE sales > 5
+ORDER BY sales;
+
+--display the average price of all grills
+SELECT AVG(price) "avg grill price"
+FROM my_store;
+
+--display the highest priced grill
+SELECT MAX(sales) FROM my_store;
